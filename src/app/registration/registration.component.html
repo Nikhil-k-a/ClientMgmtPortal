@@ -1,0 +1,34 @@
+<div>
+
+  <ul>
+    <li [hidden]="!isHidden"><a routerLink="/login" >Login</a></li>
+    <li [hidden]="isHidden"><a routerLink="/login">Logout</a> </li>
+    <li style="float:right"><a href="#about">About</a></li>
+  </ul>
+  <hr/>
+  </div>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="activeh2"> Sign In </h2>
+        
+      <!-- Icon -->
+      <!-- <div class="fadeIn first">
+        <img src="C:\Users\Admin\Desktop\JFSD\workspace\angularworkspace\angularproject2\download.jpeg" id="icon" alt="User Icon" />
+      </div> -->
+
+   
+      <!-- Registration Form -->
+      <form>
+        <input type="text" id="username" class="fadeIn second" name="username" value="username" placeholder=" Enter your Username" [(ngModel)]="name">
+        <input type="text" id="email" class="fadeIn second" name="email" value="email" placeholder=" Enter your Email" [(ngModel)]="email">
+        <input type="text" id="address" class="fadeIn second" name="address" value="address" placeholder=" Enter your Address" [(ngModel)]="address">
+        <input type="password" id="password" class="fadeIn second" name="pwd" value="pwd" placeholder="Enter your password" [(ngModel)]="pwd">
+        <input type="password" id="password" class="fadeIn third" name="repeatPwd" value="repeatPwd" placeholder="Re-enter your password" [(ngModel)]="repeatPwd">
+        <input type="submit" class="fadeIn fourth" (click)="save()" value="Sign-up">
+      </form>
+  
+    </div>
+    <br><br><br><br><br><br><br>
+  </div>
+

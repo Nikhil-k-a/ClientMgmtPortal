@@ -1,0 +1,31 @@
+ 
+ <div>
+
+  <ul>
+    <li [hidden]="isHidden"><a routerLink="/login" >Login</a></li>
+    <li [hidden]="isHidden"><a routerLink="/registration">Register</a></li>
+    <li [hidden]="!isHidden"><a routerLink="/login">Logout</a> </li>
+    <li style="float:right"><a href="#about">About</a></li>
+  </ul>
+  <hr/>
+  </div>
+ <h1 class="h1">{{msg}}</h1>
+ <div class="wrapper fadeInDown">
+    <div id="formContent">
+      
+      <h2 class="activeh2"> Schedule Meeting </h2>
+  
+     
+      <form>
+        <input type="text" id="login" class="fadeIn second" name="topic" placeholder=" Enter Topic" [(ngModel)]="topic">
+        <input type="text" id="password" class="fadeIn third" name="count" placeholder="Enter no. of people" [(ngModel)]="count">
+        <h3>Enter Meeting Start Time: </h3><input type="datetime-local" id="password" class="fadeIn third" name="login" placeholder="Enter meeting Start time" [(ngModel)]="startTime">
+        <input type="submit" class="fadeIn fourth" (click)="schedule(scheduledBy)" value="schedule">
+        <input type="submit" class="fadeIn fourth" (click)="callwelcome(scheduledBy)" value="Back">
+      </form>
+  
+     
+    </div>
+    <br><br><br><br><br><br><br><br>
+  </div> 
+  

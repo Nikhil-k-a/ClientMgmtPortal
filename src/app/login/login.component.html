@@ -1,0 +1,36 @@
+<div>
+
+<ul>
+  <li [hidden]="isHidden"><a routerLink="/login" >Login</a></li>
+  <li><a routerLink="/registration">Register</a></li>
+  <li><a routerLink="/login">Logout</a> </li>
+  <li style="float:right"><a href="#about">About</a></li>
+</ul>
+<hr/>
+</div>
+<div class="wrapper fadeInDown">
+    <div class="col-lg-6" id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="activeh2"> Sign In </h2>
+        
+      <!-- Icon -->
+      <!-- <div class="fadeIn first">
+        <img src="C:\Users\Admin\Desktop\JFSD\workspace\angularworkspace\angularproject2\download.jpeg" id="icon" alt="User Icon" />
+      </div> -->
+  
+      <!-- Login Form -->
+      <form>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder=" Enter your Email" [(ngModel)]="email">
+        <br><input type="password" id="password"  name="login" placeholder="Enter your password" [(ngModel)]="pwd">
+        <input type="submit" class="fadeIn fourth" (click)="login()" value="Log In">
+        <div>{{msg}}</div>
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" routerLink="/registration">Forgot Password?</a>
+      </div>
+  
+    </div>
+    <br><br><br><br><br><br><br>
+  </div>

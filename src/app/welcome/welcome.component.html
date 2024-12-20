@@ -1,0 +1,20 @@
+<div>
+
+  <ul>
+    <li [hidden]="isHidden"><a routerLink="/login" >Login</a></li>
+    <li [hidden]="isHidden"><a routerLink="/registration">Register</a></li>
+    <li [hidden]="!isHidden"><a routerLink="/login">Logout</a> </li>
+    <li style="float:right"><a href="#about">About</a></li>
+  </ul>
+  <hr/>
+  </div>
+<div style="text-align: center;">
+    <!-- <a routerLink="/login">Login</a> &nbsp; &nbsp; &nbsp; &nbsp;  -->
+    <!-- <a routerLink="/registration">Register</a> &nbsp; &nbsp; &nbsp; &nbsp; -->
+     
+    <h1> Hi {{user}}, welcome!!</h1>
+    <input type="submit"  value="Click here to Schedule Meeting" (click)="startschedule((email))"> 
+    <input type="submit"  value="Click here to view Scheduled Meetings" (click)="callscheduled((email))"> 
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+  

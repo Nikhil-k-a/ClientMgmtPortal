@@ -1,0 +1,38 @@
+<div>
+
+    <ul>
+      <li [hidden]="isHidden"><a routerLink="/login" >Login</a></li>
+      <li [hidden]="isHidden"><a routerLink="/registration">Register</a></li>
+      <li [hidden]="!isHidden"><a routerLink="/login">Logout</a> </li>
+      <li style="float:right"><a href="#about">About</a></li>
+    </ul>
+    <hr/>
+    </div>
+    <div>
+<h1 class="h1">Scheduled Meeting Details</h1>
+<table  class="table" border="1" >
+    <tr>
+        <th>Topic</th>
+        <th>Participants Count</th>
+        <th>Start time</th>
+        <th>Scheduled By</th>
+        <th>Edit</th>
+        <th>Delete </th>
+    </tr>
+    <tr *ngFor="let meeting of meetings">
+        <td>{{meeting.topic}}</td>
+        <td>{{meeting.no_of_ppl}}</td>
+        <td>{{meeting.start_time|date:'dd/MM/yyyy hh:mm:ss'}}</td>
+        <td>{{meeting.scheduled_by}}</td>
+        <td><button class="btn" routerLink="/edit/{{meeting.topic}}">Edit</button></td>
+        <td><button class="btn"(click)="deleteMeeting(meeting.topic,meeting.scheduled_by)">Delete</button></td>
+    </tr>
+</table>
+<br><br><br><br><br><br><br><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="sub" type="submit"  value="Back" (click)="callwelcome((email))"> 
+<input class="sub"  type="submit"  value="Click here to Schedule Another Meeting" (click)="callschedule((email))"> 
+</div>
+
+
