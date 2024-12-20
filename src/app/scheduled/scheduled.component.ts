@@ -78,4 +78,13 @@ id:number=0;
       )  
       }
     }
+
+    editMeeting(meeting:any){
+        const obj = {topics: meeting.topic , counts: meeting.no_of_ppl , times: meeting.startTime , scheduledBys:meeting.scheduled_by,email:this.email};
+        // this.http.get('test', { params: obj}).subscribe();
+        this.router.navigate(['/edit',meeting.topic ,this.email]);
+         
+      
+    }
+
 }

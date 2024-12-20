@@ -138,19 +138,25 @@ app.get('/getMeetings',(req,res)=>{
          }  
     });
  });
- 
+ const meeting={
+    topic:this.topic,
+    no_of_ppl:this.count,
+    startTime:this.startTime,
+    scheduled_by:this.userId
+  };
  //update the data 
- app.put('/updateproduct',(req,res)=>{
-     const {id,name,orderdate,ordertime}=req.body;
-     const sql='update product set name=?,orderdate=?,ordertime=? where id=? '; 
-     db.query(sql,[name,orderdate,ordertime,id],(err,result)=>{
+ app.put('/updateMeeting',(req,res)=>{
+    const {topic,no_of_ppl,startTime,scheduled_by}=req.body;
+    console.log("in server ---------------------")
+     const sql='update meeting_details set no_of_ppl=?,start_time=? where scheduled_by=? and topic=?'; 
+     db.query(sql,[no_of_ppl,startTime,scheduled_by,topic],(err,result)=>{
       if(err){
-          console.error('Error in update the product',err);
+          console.error('Error in update the meeting',err);
           res.status(500).json({error:'An error occured '});
           } 
           else{
-              res.status(200).json({message:'Product updated Successfully..'});
-              console.log('product updated')
+              res.status(200).json({message:'Meeting updated Successfully..'});
+              console.log('Meeting updated')
           }  
      });
   });

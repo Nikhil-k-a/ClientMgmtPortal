@@ -24,7 +24,7 @@
         <td>{{meeting.no_of_ppl}}</td>
         <td>{{meeting.start_time|date:'dd/MM/yyyy hh:mm:ss'}}</td>
         <td>{{meeting.scheduled_by}}</td>
-        <td><button class="btn" routerLink="/edit/{{meeting.topic}}">Edit</button></td>
+        <td><button class="btn"(click)="editMeeting(meeting) " >Edit</button></td>
         <td><button class="btn"(click)="deleteMeeting(meeting.topic,meeting.scheduled_by)">Delete</button></td>
     </tr>
 </table>

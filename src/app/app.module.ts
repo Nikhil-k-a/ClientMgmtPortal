@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { ScheduledComponent } from './scheduled/scheduled.component';
+import { EditComponent } from './edit/edit.component';
 
 const routes:Routes=[
   {path:'',redirectTo:'login',pathMatch:'full'},
@@ -18,6 +19,7 @@ const routes:Routes=[
   {path:'welcome/:email',component:WelcomeComponent},
   {path:'schedule/:email',component:ScheduleComponent},
   {path:'scheduled/:email',component:ScheduledComponent},
+  {path:'edit/:topic/:email',component:EditComponent},
   ]
 
 
@@ -30,6 +32,7 @@ const routes:Routes=[
     WelcomeComponent,
     ScheduleComponent,
     ScheduledComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
