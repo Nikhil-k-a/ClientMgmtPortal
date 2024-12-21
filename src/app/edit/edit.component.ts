@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-edit',
@@ -12,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditComponent {
 
   msg:any;
+  message:string="";
   isHidden:boolean=true;
   scheduledBy:any;
   topic:string="";
@@ -77,9 +79,12 @@ export class EditComponent {
     const obj = {topic: this.topic , no_of_ppl: this.count , startTime: this.time , scheduled_by:this.scheduledBy, email:this.email};
     console.log("email" + obj.email + " topic"+obj.topic + "count"+obj.no_of_ppl + "time"+ obj.startTime + "id" + this.scheduledBy )
     this.http.put('http://localhost:3000/updateMeeting/',obj)
-        .subscribe((response:any)=>
-          {this.msg=response.message; console.log(" in resp=----------")
-          this.router.navigate(['/scheduled',this.email])},
+        .subscribe((response:any)=>{
+           this.message="Successfully updated the meeting!!! Redirecting to Scheduled meetings page",
+                        timer(3000).subscribe(() => {
+                        this.msg=response.message;this.router.navigate(['/scheduled',this.email]);
+                        // Do something after 5 seconds
+                      });},
         (error)=>{console.error('Error in deleting the product',error);}
       ) 
    }
